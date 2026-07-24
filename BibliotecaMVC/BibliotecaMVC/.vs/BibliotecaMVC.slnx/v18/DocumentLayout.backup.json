@@ -1,14 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Jhonny\\source\\repos\\BibliotecaMVC\\",
+  "WorkspaceRootPath": "C:\\Users\\Jhonny\\Desktop\\ProgramacionFrontEnd-UEES\\BibliotecaMVC\\BibliotecaMVC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BE51BE62-EE7A-D472-716D-555E17144DD3}|BibliotecaMVC\\BibliotecaMVC.csproj|c:\\users\\jhonny\\source\\repos\\bibliotecamvc\\bibliotecamvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{BE51BE62-EE7A-D472-716D-555E17144DD3}|BibliotecaMVC\\BibliotecaMVC.csproj|c:\\users\\jhonny\\desktop\\programacionfrontend-uees\\bibliotecamvc\\bibliotecamvc\\bibliotecamvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BE51BE62-EE7A-D472-716D-555E17144DD3}|BibliotecaMVC\\BibliotecaMVC.csproj|solutionrelative:bibliotecamvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE51BE62-EE7A-D472-716D-555E17144DD3}|BibliotecaMVC\\BibliotecaMVC.csproj|c:\\users\\jhonny\\source\\repos\\bibliotecamvc\\bibliotecamvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE51BE62-EE7A-D472-716D-555E17144DD3}|BibliotecaMVC\\BibliotecaMVC.csproj|solutionrelative:bibliotecamvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BE51BE62-EE7A-D472-716D-555E17144DD3}|BibliotecaMVC\\BibliotecaMVC.csproj|c:\\users\\jhonny\\desktop\\programacionfrontend-uees\\bibliotecamvc\\bibliotecamvc\\bibliotecamvc\\views\\shared\\_menuprincipal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BE51BE62-EE7A-D472-716D-555E17144DD3}|BibliotecaMVC\\BibliotecaMVC.csproj|solutionrelative:bibliotecamvc\\views\\shared\\_menuprincipal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE51BE62-EE7A-D472-716D-555E17144DD3}|BibliotecaMVC\\BibliotecaMVC.csproj|c:\\users\\jhonny\\desktop\\programacionfrontend-uees\\bibliotecamvc\\bibliotecamvc\\bibliotecamvc\\views\\autores\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BE51BE62-EE7A-D472-716D-555E17144DD3}|BibliotecaMVC\\BibliotecaMVC.csproj|solutionrelative:bibliotecamvc\\views\\autores\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE51BE62-EE7A-D472-716D-555E17144DD3}|BibliotecaMVC\\BibliotecaMVC.csproj|c:\\users\\jhonny\\desktop\\programacionfrontend-uees\\bibliotecamvc\\bibliotecamvc\\bibliotecamvc\\controllers\\autorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE51BE62-EE7A-D472-716D-555E17144DD3}|BibliotecaMVC\\BibliotecaMVC.csproj|solutionrelative:bibliotecamvc\\controllers\\autorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE51BE62-EE7A-D472-716D-555E17144DD3}|BibliotecaMVC\\BibliotecaMVC.csproj|c:\\users\\jhonny\\desktop\\programacionfrontend-uees\\bibliotecamvc\\bibliotecamvc\\bibliotecamvc\\models\\autores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE51BE62-EE7A-D472-716D-555E17144DD3}|BibliotecaMVC\\BibliotecaMVC.csproj|solutionrelative:bibliotecamvc\\models\\autores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,28 +46,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Jhonny\\source\\repos\\BibliotecaMVC\\BibliotecaMVC\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "BibliotecaMVC\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Jhonny\\source\\repos\\BibliotecaMVC\\BibliotecaMVC\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "BibliotecaMVC\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwA0AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-17T00:32:45.355Z",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhonny\\Desktop\\ProgramacionFrontEnd-UEES\\BibliotecaMVC\\BibliotecaMVC\\BibliotecaMVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaMVC\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Jhonny\\Desktop\\ProgramacionFrontEnd-UEES\\BibliotecaMVC\\BibliotecaMVC\\BibliotecaMVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "BibliotecaMVC\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-24T03:01:34.672Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jhonny\\source\\repos\\BibliotecaMVC\\BibliotecaMVC\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "BibliotecaMVC\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Jhonny\\source\\repos\\BibliotecaMVC\\BibliotecaMVC\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "BibliotecaMVC\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAACkAAABvAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "_MenuPrincipal.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhonny\\Desktop\\ProgramacionFrontEnd-UEES\\BibliotecaMVC\\BibliotecaMVC\\BibliotecaMVC\\Views\\Shared\\_MenuPrincipal.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaMVC\\Views\\Shared\\_MenuPrincipal.cshtml",
+              "ToolTip": "C:\\Users\\Jhonny\\Desktop\\ProgramacionFrontEnd-UEES\\BibliotecaMVC\\BibliotecaMVC\\BibliotecaMVC\\Views\\Shared\\_MenuPrincipal.cshtml",
+              "RelativeToolTip": "BibliotecaMVC\\Views\\Shared\\_MenuPrincipal.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-17T00:22:12.41Z",
+              "WhenOpened": "2026-07-24T03:01:32.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Autores.cs",
+              "DocumentMoniker": "C:\\Users\\Jhonny\\Desktop\\ProgramacionFrontEnd-UEES\\BibliotecaMVC\\BibliotecaMVC\\BibliotecaMVC\\Models\\Autores.cs",
+              "RelativeDocumentMoniker": "BibliotecaMVC\\Models\\Autores.cs",
+              "ToolTip": "C:\\Users\\Jhonny\\Desktop\\ProgramacionFrontEnd-UEES\\BibliotecaMVC\\BibliotecaMVC\\BibliotecaMVC\\Models\\Autores.cs",
+              "RelativeToolTip": "BibliotecaMVC\\Models\\Autores.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-24T02:34:18.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AutoresController.cs",
+              "DocumentMoniker": "C:\\Users\\Jhonny\\Desktop\\ProgramacionFrontEnd-UEES\\BibliotecaMVC\\BibliotecaMVC\\BibliotecaMVC\\Controllers\\AutoresController.cs",
+              "RelativeDocumentMoniker": "BibliotecaMVC\\Controllers\\AutoresController.cs",
+              "ToolTip": "C:\\Users\\Jhonny\\Desktop\\ProgramacionFrontEnd-UEES\\BibliotecaMVC\\BibliotecaMVC\\BibliotecaMVC\\Controllers\\AutoresController.cs",
+              "RelativeToolTip": "BibliotecaMVC\\Controllers\\AutoresController.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-24T02:17:35.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhonny\\Desktop\\ProgramacionFrontEnd-UEES\\BibliotecaMVC\\BibliotecaMVC\\BibliotecaMVC\\Views\\Autores\\Index.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaMVC\\Views\\Autores\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Jhonny\\Desktop\\ProgramacionFrontEnd-UEES\\BibliotecaMVC\\BibliotecaMVC\\BibliotecaMVC\\Views\\Autores\\Index.cshtml",
+              "RelativeToolTip": "BibliotecaMVC\\Views\\Autores\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAkwBIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-24T02:19:04.876Z",
               "EditorCaption": ""
             }
           ]
