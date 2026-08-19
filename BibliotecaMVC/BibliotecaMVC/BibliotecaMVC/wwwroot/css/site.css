@@ -1,31 +1,217 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+    color: var(--bs-secondary-color);
+    text-align: end;
 }
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+    text-align: start;
+}
+
+.acerca {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    color: #333;
+}
+
+.acerca-encabezado {
+    text-align: center;
+    border-bottom: 3px solid #0d6efd;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+    .acerca-encabezado h1 {
+        color: #0d6efd;
+    }
+
+.acerca-seccion {
+    background-color: #f8f9fa;
+    border-left: 4px solid #0d6efd;
+    border-radius: 6px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+    .acerca-seccion h2 {
+        font-size: 1.4rem;
+        color: #0d6efd;
+    }
+
+.acerca-lista li {
+    margin-bottom: 0.4rem;
+}
+
+.acerca-dato {
+    background-color: #e7f1ff;
+    border: 1px solid #b6d4fe;
+    border-radius: 6px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+    .acerca-dato h3 {
+        font-size: 1.1rem;
+    }
+
+.acerca-pie {
+    text-align: center;
+    font-style: normal;
+    color: #6c757d;
+    border-top: 1px solid #dee2e6;
+    padding-top: 1rem;
+}
+
+@media (max-width: 576px) {
+    .acerca {
+        padding: 0.5rem;
+    }
+
+    .acerca-encabezado h1 {
+        font-size: 1.6rem;
+    }
+
+    .acerca-seccion,
+    .acerca-dato {
+        padding: 0.75rem 1rem;
+    }
+
+        .acerca-seccion h2 {
+            font-size: 1.2rem;
+        }
+}
+
+.franja-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: #0d6efd;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.franja-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 150px;
+    color: #fff;
+    text-align: center;
+}
+
+.franja-numero {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.franja-texto {
+    font-size: 0.95rem;
+}
+
+.rejilla-libros {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.libro-destacado {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+    .libro-destacado h5 {
+        color: #0d6efd;
+        margin-bottom: 0.25rem;
+    }
+
+    .libro-destacado p {
+        color: #6c757d;
+        margin-bottom: 0.5rem;
+    }
+
+.libro-categoria {
+    display: inline-block;
+    background-color: #e7f1ff;
+    color: #0d6efd;
+    border-radius: 12px;
+    padding: 0.15rem 0.75rem;
+    font-size: 0.85rem;
+}
+
+.contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tarjeta-info {
+    flex: 1 1 250px;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+    .tarjeta-info h3 {
+        font-size: 1.15rem;
+        color: #0d6efd;
+    }
+
+.etiqueta {
+    display: inline-block;
+    background-color: #0d6efd;
+    color: #fff;
+    border-radius: 12px;
+    padding: 0.15rem 0.75rem;
+    font-size: 0.8rem;
+    margin-right: 0.25rem;
+}
+
+@media (max-width: 992px) {
+    .rejilla-libros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .rejilla-libros {
+        grid-template-columns: 1fr;
+    }
+
+    .franja-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .franja-numero {
+        font-size: 1.6rem;
+    }
 }

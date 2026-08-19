@@ -1,8 +1,150 @@
 ﻿@{
-    ViewData["Title"] = "Pagina de inicio";
+    ViewData["Title"] = "Página de inicio";
 }
 
-<div class="text-center">
-    <h1>Sistema de gestion de biblioteca</h1>
-    <p>Bienvenidos al sistema desarrollado con ASP.net Core MVC.</p>
+<div class="p-5 mb-4 bg-primary text-white rounded-3 text-center">
+    <h1 class="display-5 fw-bold">Biblioteca Virtual</h1>
+    <p class="lead">Sistema de gestión de biblioteca desarrollado con ASP.NET Core MVC. Consulta libros, autores, categorías y préstamos desde un solo lugar.</p>
+    <a class="btn btn-light btn-lg" asp-controller="Home" asp-action="Libros">Explorar el catálogo</a>
 </div>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 mb-4">
+    <div class="col">
+        <div class="card h-100 text-center">
+            <div class="card-body">
+                <h5 class="card-title">Libros <span class="badge bg-primary">Nuevo</span></h5>
+                <p class="card-text">Consulta el catálogo de libros disponibles: novelas, cuentos, textos académicos y más.</p>
+            </div>
+            <div class="card-footer bg-white border-0">
+                <a class="btn btn-primary" asp-controller="Home" asp-action="Libros">Ver libros</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100 text-center">
+            <div class="card-body">
+                <h5 class="card-title">Autores</h5>
+                <p class="card-text">Conoce a los autores registrados en la biblioteca y sus obras publicadas.</p>
+            </div>
+            <div class="card-footer bg-white border-0">
+                <a class="btn btn-primary" asp-controller="Autores" asp-action="Index">Ver autores</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100 text-center">
+            <div class="card-body">
+                <h5 class="card-title">Categorías</h5>
+                <p class="card-text">Explora los libros organizados por categorías: literatura, ciencia, historia y tecnología.</p>
+            </div>
+            <div class="card-footer bg-white border-0">
+                <a class="btn btn-primary" asp-controller="Home" asp-action="Categorias">Ver categorías</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100 text-center">
+            <div class="card-body">
+                <h5 class="card-title">Préstamos</h5>
+                <p class="card-text">Solicita préstamos de libros y consulta las fechas de devolución de forma sencilla.</p>
+            </div>
+            <div class="card-footer bg-white border-0">
+                <a class="btn btn-primary" asp-controller="Home" asp-action="Prestamos">Ver préstamos</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 class="mb-3">Preguntas frecuentes</h2>
+<div class="accordion mb-4" id="acordeonFaq">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqUno">
+                ¿Cómo solicito un préstamo de libro?
+            </button>
+        </h2>
+        <div id="faqUno" class="accordion-collapse collapse show" data-bs-parent="#acordeonFaq">
+            <div class="accordion-body">
+                Debes estar registrado como usuario de la biblioteca. Luego, desde la sección de Préstamos puedes solicitar el libro que necesites, con un plazo de devolución de 15 días.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqDos">
+                ¿Qué categorías de libros están disponibles?
+            </button>
+        </h2>
+        <div id="faqDos" class="accordion-collapse collapse" data-bs-parent="#acordeonFaq">
+            <div class="accordion-body">
+                Contamos con categorías de literatura, ciencia, historia, tecnología e infantil. Puedes verlas todas en la sección de Categorías.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTres">
+                ¿El registro tiene algún costo?
+            </button>
+        </h2>
+        <div id="faqTres" class="accordion-collapse collapse" data-bs-parent="#acordeonFaq">
+            <div class="accordion-body">
+                No, el registro como usuario de la Biblioteca Virtual es completamente gratuito.
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 class="mb-3">Nuestra biblioteca en números</h2>
+<section class="franja-flex mb-4">
+    <div class="franja-item">
+        <span class="franja-numero">1,250</span>
+        <span class="franja-texto">Libros disponibles</span>
+    </div>
+    <div class="franja-item">
+        <span class="franja-numero">320</span>
+        <span class="franja-texto">Autores registrados</span>
+    </div>
+    <div class="franja-item">
+        <span class="franja-numero">5</span>
+        <span class="franja-texto">Categorías</span>
+    </div>
+    <div class="franja-item">
+        <span class="franja-numero">800</span>
+        <span class="franja-texto">Usuarios lectores</span>
+    </div>
+</section>
+
+<h2 class="mb-3">Libros destacados</h2>
+<section class="rejilla-libros mb-4">
+    <div class="libro-destacado">
+        <h5>Cien años de soledad</h5>
+        <p>Gabriel García Márquez</p>
+        <span class="libro-categoria">Literatura</span>
+    </div>
+    <div class="libro-destacado">
+        <h5>El principito</h5>
+        <p>Antoine de Saint-Exupéry</p>
+        <span class="libro-categoria">Infantil</span>
+    </div>
+    <div class="libro-destacado">
+        <h5>Breve historia del tiempo</h5>
+        <p>Stephen Hawking</p>
+        <span class="libro-categoria">Ciencia</span>
+    </div>
+    <div class="libro-destacado">
+        <h5>Don Quijote de la Mancha</h5>
+        <p>Miguel de Cervantes</p>
+        <span class="libro-categoria">Literatura</span>
+    </div>
+    <div class="libro-destacado">
+        <h5>Sapiens</h5>
+        <p>Yuval Noah Harari</p>
+        <span class="libro-categoria">Historia</span>
+    </div>
+    <div class="libro-destacado">
+        <h5>Código limpio</h5>
+        <p>Robert C. Martin</p>
+        <span class="libro-categoria">Tecnología</span>
+    </div>
+</section>

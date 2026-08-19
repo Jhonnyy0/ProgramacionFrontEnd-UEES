@@ -1,4 +1,3 @@
-wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -61,7 +60,7 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\wwwroot\css\site.css
+wwwroot\css\site.css
 C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\wwwroot\favicon.ico
 C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\wwwroot\js\site.js
 C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -123,3 +122,4 @@ C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\Bi
 C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\wwwroot\lib\jquery\dist\jquery.slim.min.js
 C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\wwwroot\lib\jquery\dist\jquery.slim.min.map
 C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\wwwroot\lib\jquery\LICENSE.txt
+C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\wwwroot\css\site.css
