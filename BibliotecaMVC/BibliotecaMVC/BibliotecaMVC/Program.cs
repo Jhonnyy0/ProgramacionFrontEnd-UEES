@@ -1,7 +1,10 @@
+using BibliotecaMVC.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IAutorService, AutorServiceNacional>();
 
 var app = builder.Build();
 

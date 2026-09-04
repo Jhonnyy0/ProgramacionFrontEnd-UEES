@@ -1,5 +1,9 @@
-﻿@model List<BibliotecaMVC.Models.Autores>
-<h2>Catalogo de Autores</h2>
+﻿@model IEnumerable<BibliotecaMVC.Models.Autores>
+@{
+    ViewData["Title"] = "Catálogo de Autores";
+}
+
+<h2>Catálogo de Autores</h2>
 
 <table class="table table-striped">
     <thead>
@@ -10,27 +14,33 @@
             <th>Nacionalidad</th>
             <th>Fecha de Nacimiento</th>
             <th>Estado</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var Autores in Model)
+        @foreach (var autor in Model)
         {
             <tr>
-                <td>@Autores.Id</td>
-                <td>@Autores.Nombre</td>
-                <td>@Autores.Apellido</td>
-                <td>@Autores.Nacionalidad</td>
-                <td>@Autores.FechaNacimiento</td>
+                <td>@autor.Id</td>
+                <td>@autor.Nombre</td>
+                <td>@autor.Apellido</td>
+                <td>@autor.Nacionalidad</td>
+                <td>@autor.FechaNacimiento.ToString("dd/MM/yyyy")</td>
                 <td>
-                    @if (Autores.Activo)
+                    @if (autor.Activo)
                     {
-                        <spam class="badge bg-success">Activo</spam>
+                        <span class="badge bg-success">Activo</span>
                     }
-
                     else
                     {
-                        <spam class="badge bg-danger">Inactivo</spam>
+                        <span class="badge bg-danger">Inactivo</span>
                     }
+                </td>
+                <td>
+                    <a class="btn btn-sm btn-outline-primary"
+                       asp-controller="Autores" asp-action="Detalle" asp-route-id="@autor.Id">
+                        Ver detalle
+                    </a>
                 </td>
             </tr>
         }
