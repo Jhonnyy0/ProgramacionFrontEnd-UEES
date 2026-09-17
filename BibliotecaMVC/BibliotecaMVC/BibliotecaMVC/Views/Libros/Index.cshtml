@@ -1,0 +1,85 @@
+@model IEnumerable<BibliotecaMVC.Models.Libro>
+@{
+    ViewData["Title"] = "Catálogo de Libros";
+}
+
+<div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+    <div>
+        <h2 class="mb-1">Catálogo de Libros</h2>
+        <p class="text-muted mb-0">
+            @Model.Count() título(s) registrado(s) ·
+            @Model.Sum(l => l.Ejemplares) ejemplar(es) en total
+        </p>
+    </div>
+    <a class="btn btn-primary" asp-controller="Libros" asp-action="Crear">Registrar libro</a>
+</div>
+
+@if (TempData["Mensaje"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Mensaje"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+}
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        Todavía no hay libros registrados. Usá el botón <strong>Registrar libro</strong> para agregar el primero.
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>#</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Editorial</th>
+                    <th class="text-center">Año</th>
+                    <th class="text-center">Ejemplares</th>
+                    <th class="text-center">Estado</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var libro in Model)
+                {
+                    <tr>
+                        <td>@libro.Id</td>
+                        <td>
+                            <strong>@libro.Titulo</strong>
+                            @if (!string.IsNullOrWhiteSpace(libro.Isbn))
+                            {
+                                <br />
+                                <small class="text-muted">ISBN: @libro.Isbn</small>
+                            }
+                        </td>
+                        <td>@libro.Autor</td>
+                        <td>@(string.IsNullOrWhiteSpace(libro.Editorial) ? "—" : libro.Editorial)</td>
+                        <td class="text-center">@libro.AnioPublicacion</td>
+                        <td class="text-center">@libro.Ejemplares</td>
+                        <td class="text-center">
+                            @if (libro.Disponible)
+                            {
+                                <span class="badge bg-success">Disponible</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">No disponible</span>
+                            }
+                        </td>
+                        <td class="text-end">
+                            <a class="btn btn-sm btn-outline-primary"
+                               asp-controller="Libros" asp-action="Detalle" asp-route-id="@libro.Id">
+                                Ver
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
