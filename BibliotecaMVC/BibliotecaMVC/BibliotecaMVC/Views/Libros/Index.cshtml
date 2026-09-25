@@ -1,31 +1,48 @@
 @model IEnumerable<BibliotecaMVC.Models.Libro>
 @{
     ViewData["Title"] = "Catálogo de Libros";
+    var busqueda = ViewData["Buscar"] as string;
 }
 
 <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
     <div>
         <h2 class="mb-1">Catálogo de Libros</h2>
         <p class="text-muted mb-0">
-            @Model.Count() título(s) registrado(s) ·
-            @Model.Sum(l => l.Ejemplares) ejemplar(es) en total
+            @Model.Count() título(s) ·
+            @Model.Sum(l => l.Ejemplares) ejemplar(es) ·
+            @Model.Count(l => l.Disponible) disponible(s)
         </p>
     </div>
     <a class="btn btn-primary" asp-controller="Libros" asp-action="Crear">Registrar libro</a>
 </div>
 
-@if (TempData["Mensaje"] != null)
-{
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        @TempData["Mensaje"]
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+<partial name="_Mensaje" />
+
+<form class="row g-2 mb-3" asp-controller="Libros" asp-action="Index" method="get">
+    <div class="col-sm-8 col-md-6">
+        <input type="text" name="buscar" value="@busqueda" class="form-control"
+               placeholder="Buscar por título o autor..." />
     </div>
-}
+    <div class="col-auto">
+        <button type="submit" class="btn btn-outline-primary">Buscar</button>
+        @if (!string.IsNullOrWhiteSpace(busqueda))
+        {
+            <a class="btn btn-outline-secondary" asp-controller="Libros" asp-action="Index">Limpiar</a>
+        }
+    </div>
+</form>
 
 @if (!Model.Any())
 {
     <div class="alert alert-info">
-        Todavía no hay libros registrados. Usá el botón <strong>Registrar libro</strong> para agregar el primero.
+        @if (!string.IsNullOrWhiteSpace(busqueda))
+        {
+            <span>No se encontraron libros que coincidan con la búsqueda.</span>
+        }
+        else
+        {
+            <span>Todavía no hay libros registrados. Usá el botón <strong>Registrar libro</strong> para agregar el primero.</span>
+        }
     </div>
 }
 else
@@ -41,7 +58,7 @@ else
                     <th class="text-center">Año</th>
                     <th class="text-center">Ejemplares</th>
                     <th class="text-center">Estado</th>
-                    <th></th>
+                    <th class="text-end">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -72,10 +89,20 @@ else
                             }
                         </td>
                         <td class="text-end">
-                            <a class="btn btn-sm btn-outline-primary"
-                               asp-controller="Libros" asp-action="Detalle" asp-route-id="@libro.Id">
-                                Ver
-                            </a>
+                            <div class="btn-group btn-group-sm" role="group" aria-label="Acciones del libro">
+                                <a class="btn btn-outline-secondary"
+                                   asp-controller="Libros" asp-action="Detalle" asp-route-id="@libro.Id">
+                                    Ver
+                                </a>
+                                <a class="btn btn-outline-primary"
+                                   asp-controller="Libros" asp-action="Editar" asp-route-id="@libro.Id">
+                                    Editar
+                                </a>
+                                <a class="btn btn-outline-danger"
+                                   asp-controller="Libros" asp-action="Eliminar" asp-route-id="@libro.Id">
+                                    Eliminar
+                                </a>
+                            </div>
                         </td>
                     </tr>
                 }

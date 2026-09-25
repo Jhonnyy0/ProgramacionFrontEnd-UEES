@@ -3,6 +3,15 @@
     ViewData["Title"] = "Detalle del Libro";
 }
 
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a asp-controller="Libros" asp-action="Index">Catálogo de Libros</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Detalle</li>
+    </ol>
+</nav>
+
 <h2 class="mb-3">Detalle del Libro</h2>
 
 <div class="card shadow-sm mb-3">
@@ -38,7 +47,9 @@
             <dd class="col-sm-8">@Model.FechaRegistro.ToString("dd/MM/yyyy")</dd>
         </dl>
     </div>
-    <div class="card-footer bg-white">
-        <a class="btn btn-secondary" asp-controller="Libros" asp-action="Index">Volver al catálogo</a>
+    <div class="card-footer bg-white d-flex gap-2">
+        <a class="btn btn-primary" asp-controller="Libros" asp-action="Editar" asp-route-id="@Model.Id">Editar</a>
+        <a class="btn btn-outline-danger" asp-controller="Libros" asp-action="Eliminar" asp-route-id="@Model.Id">Eliminar</a>
+        <a class="btn btn-secondary ms-auto" asp-controller="Libros" asp-action="Index">Volver al catálogo</a>
     </div>
 </div>

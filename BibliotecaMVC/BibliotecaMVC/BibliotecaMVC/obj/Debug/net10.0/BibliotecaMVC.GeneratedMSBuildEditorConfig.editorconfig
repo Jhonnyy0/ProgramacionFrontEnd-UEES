@@ -87,8 +87,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9zXERldGFsbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Jhonny/Desktop/ProgramacionFrontEnd-UEES/BibliotecaMVC/BibliotecaMVC/BibliotecaMVC/Views/Libros/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9zXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jhonny/Desktop/ProgramacionFrontEnd-UEES/BibliotecaMVC/BibliotecaMVC/BibliotecaMVC/Views/Libros/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9zXEVsaW1pbmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Jhonny/Desktop/ProgramacionFrontEnd-UEES/BibliotecaMVC/BibliotecaMVC/BibliotecaMVC/Views/Libros/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jhonny/Desktop/ProgramacionFrontEnd-UEES/BibliotecaMVC/BibliotecaMVC/BibliotecaMVC/Views/Libros/_FormularioLibro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9zXF9Gb3JtdWxhcmlvTGlicm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jhonny/Desktop/ProgramacionFrontEnd-UEES/BibliotecaMVC/BibliotecaMVC/BibliotecaMVC/Views/Libros/_Mensaje.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9zXF9NZW5zYWplLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Jhonny/Desktop/ProgramacionFrontEnd-UEES/BibliotecaMVC/BibliotecaMVC/BibliotecaMVC/Views/Shared/Error.cshtml]

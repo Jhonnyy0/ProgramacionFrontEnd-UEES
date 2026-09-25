@@ -1,0 +1,39 @@
+@model BibliotecaMVC.Models.Libro
+@{
+    ViewData["Title"] = "Editar Libro";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a asp-controller="Libros" asp-action="Index">Catálogo de Libros</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Editar</li>
+    </ol>
+</nav>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="mb-0">Editar Libro</h2>
+    <span class="text-muted">Registro #@Model.Id</span>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <form asp-controller="Libros" asp-action="Editar" asp-route-id="@Model.Id" method="post">
+            <input type="hidden" asp-for="Id" />
+
+            <partial name="_FormularioLibro" model="Model" />
+
+            <div class="alert alert-light border small">
+                Registrado el @Model.FechaRegistro.ToString("dd/MM/yyyy"). Esa fecha no se modifica al editar.
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            <a class="btn btn-secondary" asp-controller="Libros" asp-action="Index">Cancelar</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
