@@ -1,0 +1,35 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@*
+    Bloque de sesión para la barra de navegación.
+    Muestra el usuario conectado y el botón de cerrar sesión,
+    o los enlaces de ingreso y registro cuando no hay sesión.
+*@
+
+<ul class="navbar-nav ms-auto align-items-lg-center">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <span class="nav-link text-dark">
+                Hola, <strong>@UserManager.GetUserName(User)</strong>
+            </span>
+        </li>
+        <li class="nav-item">
+            @* El cierre de sesión va por POST: un GET no debe cambiar estado *@
+            <form asp-controller="Cuenta" asp-action="CerrarSesion" method="post" class="d-inline">
+                <button type="submit" class="btn btn-sm btn-outline-danger">Cerrar sesión</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="Cuenta" asp-action="Registro">Registrarse</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-sm btn-primary" asp-controller="Cuenta" asp-action="Login">Iniciar sesión</a>
+        </li>
+    }
+</ul>

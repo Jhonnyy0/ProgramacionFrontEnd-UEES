@@ -55,6 +55,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Jhonny/Desktop/ProgramacionFrontEnd-UEES/BibliotecaMVC/BibliotecaMVC/BibliotecaMVC/Views/Cuenta/AccesoDenegado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXEFjY2Vzb0RlbmVnYWRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jhonny/Desktop/ProgramacionFrontEnd-UEES/BibliotecaMVC/BibliotecaMVC/BibliotecaMVC/Views/Cuenta/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jhonny/Desktop/ProgramacionFrontEnd-UEES/BibliotecaMVC/BibliotecaMVC/BibliotecaMVC/Views/Cuenta/Registro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFJlZ2lzdHJvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Jhonny/Desktop/ProgramacionFrontEnd-UEES/BibliotecaMVC/BibliotecaMVC/BibliotecaMVC/Views/Home/AcercaDe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY2VyY2FEZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -109,6 +121,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Jhonny/Desktop/ProgramacionFrontEnd-UEES/BibliotecaMVC/BibliotecaMVC/BibliotecaMVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jhonny/Desktop/ProgramacionFrontEnd-UEES/BibliotecaMVC/BibliotecaMVC/BibliotecaMVC/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Jhonny/Desktop/ProgramacionFrontEnd-UEES/BibliotecaMVC/BibliotecaMVC/BibliotecaMVC/Views/Shared/_MenuPrincipal.cshtml]

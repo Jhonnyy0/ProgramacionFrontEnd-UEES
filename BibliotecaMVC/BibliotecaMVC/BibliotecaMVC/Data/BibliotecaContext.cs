@@ -1,10 +1,11 @@
 ﻿using BibliotecaMVC.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
 
 namespace BibliotecaMVC.Data
 {
-    public class BibliotecaContext : DbContext
+    public class BibliotecaContext : IdentityDbContext<IdentityUser>
     {
         public BibliotecaContext(DbContextOptions<BibliotecaContext> options)
             : base(options)
@@ -28,6 +29,8 @@ namespace BibliotecaMVC.Data
                 entidad.Property(l => l.Isbn).HasMaxLength(20);
                 entidad.Property(l => l.Ejemplares).HasDefaultValue(1);
                 entidad.Property(l => l.Disponible).HasDefaultValue(true);
+
+                // Registros iniciales del módulo de Libros.
                 entidad.HasData(
                     new Libro
                     {
