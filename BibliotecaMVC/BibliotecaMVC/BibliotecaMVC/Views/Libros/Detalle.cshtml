@@ -1,6 +1,7 @@
 @model BibliotecaMVC.Models.Libro
 @{
     ViewData["Title"] = "Detalle del Libro";
+    var esAdministrador = User.IsInRole("Administrador");
 }
 
 <nav aria-label="breadcrumb">
@@ -48,8 +49,11 @@
         </dl>
     </div>
     <div class="card-footer bg-white d-flex gap-2">
-        <a class="btn btn-primary" asp-controller="Libros" asp-action="Editar" asp-route-id="@Model.Id">Editar</a>
-        <a class="btn btn-outline-danger" asp-controller="Libros" asp-action="Eliminar" asp-route-id="@Model.Id">Eliminar</a>
+        @if (esAdministrador)
+        {
+            <a class="btn btn-primary" asp-controller="Libros" asp-action="Editar" asp-route-id="@Model.Id">Editar</a>
+            <a class="btn btn-outline-danger" asp-controller="Libros" asp-action="Eliminar" asp-route-id="@Model.Id">Eliminar</a>
+        }
         <a class="btn btn-secondary ms-auto" asp-controller="Libros" asp-action="Index">Volver al catálogo</a>
     </div>
 </div>

@@ -1,4 +1,5 @@
-﻿using BibliotecaMVC.Models.ViewModels;
+using BibliotecaMVC.Data;
+using BibliotecaMVC.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -104,6 +105,8 @@ namespace BibliotecaMVC.Controllers
 
                 return View(modelo);
             }
+
+            await _userManager.AddToRoleAsync(usuario, DatosIniciales.RolUsuario);
 
             await _signInManager.SignInAsync(usuario, isPersistent: false);
 

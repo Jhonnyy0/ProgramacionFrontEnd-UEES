@@ -1,9 +1,11 @@
-﻿using BibliotecaMVC.Data;
+using BibliotecaMVC.Data;
 using BibliotecaMVC.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BibliotecaMVC.Controllers
 {
+    [Authorize]
     public class LibrosController : Controller
     {
         private readonly BibliotecaContext _contexto;
@@ -46,6 +48,7 @@ namespace BibliotecaMVC.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = DatosIniciales.RolAdministrador)]
         public IActionResult Crear()
         {
             var libro = new Libro
@@ -61,6 +64,7 @@ namespace BibliotecaMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = DatosIniciales.RolAdministrador)]
         public IActionResult Crear(Libro libro)
         {
             if (!ModelState.IsValid)
@@ -80,6 +84,7 @@ namespace BibliotecaMVC.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = DatosIniciales.RolAdministrador)]
         public IActionResult Editar(int id)
         {
             var libro = _contexto.Libros.Find(id);
@@ -94,6 +99,7 @@ namespace BibliotecaMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = DatosIniciales.RolAdministrador)]
         public IActionResult Editar(int id, Libro libro)
         {
             if (id != libro.Id)
@@ -131,6 +137,7 @@ namespace BibliotecaMVC.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = DatosIniciales.RolAdministrador)]
         public IActionResult Eliminar(int id)
         {
             var libro = _contexto.Libros.Find(id);
@@ -145,6 +152,7 @@ namespace BibliotecaMVC.Controllers
 
         [HttpPost, ActionName("Eliminar")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = DatosIniciales.RolAdministrador)]
         public IActionResult EliminarConfirmado(int id)
         {
             var libro = _contexto.Libros.Find(id);

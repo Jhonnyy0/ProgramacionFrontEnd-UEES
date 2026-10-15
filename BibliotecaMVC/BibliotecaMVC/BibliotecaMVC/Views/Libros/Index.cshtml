@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Catálogo de Libros";
     var busqueda = ViewData["Buscar"] as string;
+    var esAdministrador = User.IsInRole("Administrador");
 }
 
 <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
@@ -13,10 +14,21 @@
             @Model.Count(l => l.Disponible) disponible(s)
         </p>
     </div>
-    <a class="btn btn-primary" asp-controller="Libros" asp-action="Crear">Registrar libro</a>
+    @if (esAdministrador)
+    {
+        <a class="btn btn-primary" asp-controller="Libros" asp-action="Crear">Registrar libro</a>
+    }
 </div>
 
 <partial name="_Mensaje" />
+
+@if (!esAdministrador)
+{
+    <div class="alert alert-secondary">
+        Su cuenta tiene permisos de consulta. Las operaciones de registrar, editar y eliminar
+        están reservadas para los administradores.
+    </div>
+}
 
 <form class="row g-2 mb-3" asp-controller="Libros" asp-action="Index" method="get">
     <div class="col-sm-8 col-md-6">
@@ -41,7 +53,7 @@
         }
         else
         {
-            <span>Todavía no hay libros registrados. Usá el botón <strong>Registrar libro</strong> para agregar el primero.</span>
+            <span>Todavía no hay libros registrados.</span>
         }
     </div>
 }
@@ -89,19 +101,22 @@ else
                             }
                         </td>
                         <td class="text-end">
-                            <div class="btn-group btn-group-sm" role="group" aria-label="Acciones del libro">
+                            <div class="btn-group btn-group-sm" role="group">
                                 <a class="btn btn-outline-secondary"
                                    asp-controller="Libros" asp-action="Detalle" asp-route-id="@libro.Id">
                                     Ver
                                 </a>
-                                <a class="btn btn-outline-primary"
-                                   asp-controller="Libros" asp-action="Editar" asp-route-id="@libro.Id">
-                                    Editar
-                                </a>
-                                <a class="btn btn-outline-danger"
-                                   asp-controller="Libros" asp-action="Eliminar" asp-route-id="@libro.Id">
-                                    Eliminar
-                                </a>
+                                @if (esAdministrador)
+                                {
+                                    <a class="btn btn-outline-primary"
+                                       asp-controller="Libros" asp-action="Editar" asp-route-id="@libro.Id">
+                                        Editar
+                                    </a>
+                                    <a class="btn btn-outline-danger"
+                                       asp-controller="Libros" asp-action="Eliminar" asp-route-id="@libro.Id">
+                                        Eliminar
+                                    </a>
+                                }
                             </div>
                         </td>
                     </tr>
