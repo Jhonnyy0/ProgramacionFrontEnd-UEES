@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Catálogo de Libros";
     var busqueda = ViewData["Buscar"] as string;
-    var esAdministrador = User.IsInRole("Administrador");
+    var puedeGestionar = User.IsInRole("Admin") || User.IsInRole("Bibliotecario");
 }
 
 <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
@@ -14,7 +14,7 @@
             @Model.Count(l => l.Disponible) disponible(s)
         </p>
     </div>
-    @if (esAdministrador)
+    @if (puedeGestionar)
     {
         <a class="btn btn-primary" asp-controller="Libros" asp-action="Crear">Registrar libro</a>
     }
@@ -22,11 +22,11 @@
 
 <partial name="_Mensaje" />
 
-@if (!esAdministrador)
+@if (!puedeGestionar)
 {
     <div class="alert alert-secondary">
         Su cuenta tiene permisos de consulta. Las operaciones de registrar, editar y eliminar
-        están reservadas para los administradores.
+        están reservadas para los roles Admin y Bibliotecario.
     </div>
 }
 
@@ -106,7 +106,7 @@ else
                                    asp-controller="Libros" asp-action="Detalle" asp-route-id="@libro.Id">
                                     Ver
                                 </a>
-                                @if (esAdministrador)
+                                @if (puedeGestionar)
                                 {
                                     <a class="btn btn-outline-primary"
                                        asp-controller="Libros" asp-action="Editar" asp-route-id="@libro.Id">

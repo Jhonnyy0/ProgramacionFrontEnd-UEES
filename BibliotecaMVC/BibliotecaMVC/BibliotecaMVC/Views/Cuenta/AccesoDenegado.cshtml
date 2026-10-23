@@ -8,12 +8,13 @@
             <div class="card-body text-center p-4">
                 <h2 class="mb-3">Acceso denegado</h2>
                 <p class="text-muted">
-                    Su cuenta inició sesión correctamente, pero no cuenta con el rol necesario
-                    para realizar esta operación.
+                    Su cuenta inició sesión correctamente, pero el rol que tiene asignado
+                    no le permite realizar esta operación.
                 </p>
-                <p class="text-muted">
-                    Las operaciones de registrar, editar y eliminar libros están reservadas
-                    para los usuarios con rol Administrador.
+                <p class="text-muted mb-0">
+                    Registrar, editar y eliminar libros está reservado para los roles
+                    <strong>Admin</strong> y <strong>Bibliotecario</strong>.
+                    El rol <strong>Usuario</strong> solo puede consultar el catálogo.
                 </p>
                 <div class="d-flex gap-2 justify-content-center mt-4">
                     <a class="btn btn-primary" asp-controller="Libros" asp-action="Index">Ir al catálogo</a>
