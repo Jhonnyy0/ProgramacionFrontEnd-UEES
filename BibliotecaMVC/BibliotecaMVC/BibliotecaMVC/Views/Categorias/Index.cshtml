@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BibliotecaMVC.Models.Categoria>
+@model IEnumerable<BibliotecaMVC.Models.Categoria>
 @{
     ViewData["Title"] = "Gestión de Categorías";
 }
@@ -8,13 +8,7 @@
     <a class="btn btn-primary" asp-controller="Categorias" asp-action="Crear">Nueva categoría</a>
 </div>
 
-@if (TempData["Mensaje"] != null)
-{
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        @TempData["Mensaje"]
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
-    </div>
-}
+<partial name="_Mensaje" />
 
 @if (!Model.Any())
 {
