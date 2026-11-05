@@ -330,3 +330,15 @@ C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\Bi
 C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\bin\Debug\net10.0\BibliotecaMVC.runtimeconfig.dev.json
+C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\obj\Debug\net10.0\dotnet-watch\Microsoft.NET.Sdk.BlazorWeb.DotNetWatch.lib.module.js
+C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\obj\Debug\net10.0\dotnet-watch\Microsoft.NET.Sdk.BlazorWeb.DotNetWatch.BrowserTools.js
+C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\obj\Debug\net10.0\dotnet-watch\Microsoft.NET.Sdk.BlazorWeb.DotNetWatch.BrowserTools.Config.js
+C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\obj\Debug\net10.0\dotnet-watch\browser-tools-key.public.json
+C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\obj\Debug\net10.0\dotnet-watch\browser-tools-key.private.json
+C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\obj\Debug\net10.0\jsmodules\jsmodules.build.manifest.json
+C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\obj\Debug\net10.0\scopedcss\scopedcss.cache
+C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\obj\Debug\net10.0\compressed\x6p1tc8k27-{0}-hbxp78vwan-hbxp78vwan.gz
+C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\obj\Debug\net10.0\compressed\32g2q4mx1e-{0}-xw2yn7s0uh-xw2yn7s0uh.gz
+C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\obj\Debug\net10.0\compressed\obovjvwbtz-{0}-pmpabpnd9a-pmpabpnd9a.gz
+C:\Users\Jhonny\Desktop\ProgramacionFrontEnd-UEES\BibliotecaMVC\BibliotecaMVC\BibliotecaMVC\obj\Debug\net10.0\compressed\ft4h9cf1ti-{0}-o299wl1apk-o299wl1apk.gz

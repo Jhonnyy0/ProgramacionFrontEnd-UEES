@@ -1,5 +1,6 @@
 using BibliotecaMVC.Data;
 using BibliotecaMVC.Models;
+using BibliotecaMVC.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,12 +9,12 @@ namespace BibliotecaMVC.Controllers
     [Authorize(Roles = DatosIniciales.RolAdmin + "," + DatosIniciales.RolBibliotecario + "," + DatosIniciales.RolUsuario)]
     public class LibrosController : Controller
     {
-        private readonly BibliotecaContext _contexto;
+        private readonly ILibroService _libroService;
         private readonly ILogger<LibrosController> _logger;
 
-        public LibrosController(BibliotecaContext contexto, ILogger<LibrosController> logger)
+        public LibrosController(ILibroService libroService, ILogger<LibrosController> logger)
         {
-            _contexto = contexto;
+            _libroService = libroService;
             _logger = logger;
         }
 
@@ -21,18 +22,7 @@ namespace BibliotecaMVC.Controllers
         {
             _logger.LogInformation("Consulta del listado de libros. Texto de búsqueda: {Buscar}", buscar);
 
-            var consulta = _contexto.Libros.AsQueryable();
-
-            if (!string.IsNullOrWhiteSpace(buscar))
-            {
-                consulta = consulta.Where(l =>
-                    l.Titulo.Contains(buscar) ||
-                    l.Autor.Contains(buscar));
-            }
-
-            var libros = consulta
-                .OrderBy(l => l.Titulo)
-                .ToList();
+            var libros = _libroService.ObtenerTodos(buscar).ToList();
 
             _logger.LogInformation("El listado de libros devolvió {Cantidad} registro(s)", libros.Count);
 
@@ -45,7 +35,7 @@ namespace BibliotecaMVC.Controllers
         {
             _logger.LogInformation("Consulta del detalle del libro {Id}", id);
 
-            var libro = _contexto.Libros.Find(id);
+            var libro = _libroService.ObtenerPorId(id);
 
             if (libro == null)
             {
@@ -85,12 +75,11 @@ namespace BibliotecaMVC.Controllers
                 return View(libro);
             }
 
-            libro.FechaRegistro = DateTime.Now;
+            int idNuevo;
 
             try
             {
-                _contexto.Libros.Add(libro);
-                _contexto.SaveChanges();
+                idNuevo = _libroService.Crear(libro);
             }
             catch (Exception ex)
             {
@@ -99,7 +88,7 @@ namespace BibliotecaMVC.Controllers
                 return View(libro);
             }
 
-            _logger.LogInformation("Libro {Id} registrado correctamente: {Titulo}", libro.Id, libro.Titulo);
+            _logger.LogInformation("Libro {Id} registrado correctamente: {Titulo}", idNuevo, libro.Titulo);
 
             TempData["Mensaje"] = $"El libro \"{libro.Titulo}\" se registró correctamente.";
             TempData["TipoMensaje"] = "success";
@@ -113,7 +102,7 @@ namespace BibliotecaMVC.Controllers
         {
             _logger.LogInformation("Se abrió el formulario de edición del libro {Id}", id);
 
-            var libro = _contexto.Libros.Find(id);
+            var libro = _libroService.ObtenerPorId(id);
 
             if (libro == null)
             {
@@ -142,26 +131,11 @@ namespace BibliotecaMVC.Controllers
                 return View(libro);
             }
 
-            var libroExistente = _contexto.Libros.Find(id);
-
-            if (libroExistente == null)
-            {
-                _logger.LogWarning("No se encontró el libro {Id} al intentar editarlo", id);
-                return NotFound();
-            }
-
-            libroExistente.Titulo = libro.Titulo;
-            libroExistente.Autor = libro.Autor;
-            libroExistente.Editorial = libro.Editorial;
-            libroExistente.Isbn = libro.Isbn;
-            libroExistente.AnioPublicacion = libro.AnioPublicacion;
-            libroExistente.Ejemplares = libro.Ejemplares;
-            libroExistente.Disponible = libro.Disponible;
+            bool actualizado;
 
             try
             {
-                _contexto.Libros.Update(libroExistente);
-                _contexto.SaveChanges();
+                actualizado = _libroService.Actualizar(libro);
             }
             catch (Exception ex)
             {
@@ -170,9 +144,15 @@ namespace BibliotecaMVC.Controllers
                 return View(libro);
             }
 
+            if (!actualizado)
+            {
+                _logger.LogWarning("No se encontró el libro {Id} al intentar editarlo", id);
+                return NotFound();
+            }
+
             _logger.LogInformation("Libro {Id} actualizado correctamente", id);
 
-            TempData["Mensaje"] = $"Los cambios del libro \"{libroExistente.Titulo}\" se guardaron correctamente.";
+            TempData["Mensaje"] = $"Los cambios del libro \"{libro.Titulo}\" se guardaron correctamente.";
             TempData["TipoMensaje"] = "success";
 
             return RedirectToAction(nameof(Index));
@@ -184,7 +164,7 @@ namespace BibliotecaMVC.Controllers
         {
             _logger.LogInformation("Se abrió la confirmación para eliminar el libro {Id}", id);
 
-            var libro = _contexto.Libros.Find(id);
+            var libro = _libroService.ObtenerPorId(id);
 
             if (libro == null)
             {
@@ -202,7 +182,7 @@ namespace BibliotecaMVC.Controllers
         {
             _logger.LogInformation("Inicio de la eliminación del libro {Id} por el usuario {Usuario}", id, User.Identity?.Name);
 
-            var libro = _contexto.Libros.Find(id);
+            var libro = _libroService.ObtenerPorId(id);
 
             if (libro == null)
             {
@@ -211,11 +191,11 @@ namespace BibliotecaMVC.Controllers
             }
 
             string titulo = libro.Titulo;
+            bool eliminado;
 
             try
             {
-                _contexto.Libros.Remove(libro);
-                _contexto.SaveChanges();
+                eliminado = _libroService.Eliminar(id);
             }
             catch (Exception ex)
             {
@@ -223,6 +203,12 @@ namespace BibliotecaMVC.Controllers
                 TempData["Mensaje"] = "No se pudo eliminar el libro. Intente nuevamente.";
                 TempData["TipoMensaje"] = "danger";
                 return RedirectToAction(nameof(Index));
+            }
+
+            if (!eliminado)
+            {
+                _logger.LogWarning("No se encontró el libro {Id} al intentar eliminarlo", id);
+                return NotFound();
             }
 
             _logger.LogInformation("Libro {Id} eliminado correctamente: {Titulo}", id, titulo);

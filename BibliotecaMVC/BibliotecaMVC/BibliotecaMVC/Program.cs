@@ -36,7 +36,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 builder.Services.AddScoped<IAutorService, AutorService>();
-
+builder.Services.AddScoped<ILibroService, LibroService>();
 builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 
 var app = builder.Build();
