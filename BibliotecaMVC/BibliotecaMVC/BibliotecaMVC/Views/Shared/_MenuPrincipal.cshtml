@@ -28,6 +28,12 @@
                 <li class="nav-item">
                     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AcercaDe">Acerca de</a>
                 </li>
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Reportes" asp-action="Index">Reportes</a>
+                    </li>
+                }
             </ul>
             <partial name="_LoginPartial" />
         </div>

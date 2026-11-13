@@ -28,6 +28,29 @@ namespace BibliotecaMVC.Services
                 .ToList();
         }
 
+        public IEnumerable<Libro> ObtenerPorAutor(string? autor)
+        {
+            var consulta = _contexto.Libros.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(autor))
+            {
+                consulta = consulta.Where(l => l.Autor == autor);
+            }
+
+            return consulta
+                .OrderBy(l => l.Titulo)
+                .ToList();
+        }
+
+        public IEnumerable<string> ObtenerAutores()
+        {
+            return _contexto.Libros
+                .Select(l => l.Autor)
+                .Distinct()
+                .OrderBy(a => a)
+                .ToList();
+        }
+
         public Libro? ObtenerPorId(int id)
         {
             return _contexto.Libros.Find(id);

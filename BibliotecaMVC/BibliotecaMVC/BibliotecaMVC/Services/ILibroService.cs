@@ -6,6 +6,10 @@ namespace BibliotecaMVC.Services
     {
         IEnumerable<Libro> ObtenerTodos(string? buscar);
 
+        IEnumerable<Libro> ObtenerPorAutor(string? autor);
+
+        IEnumerable<string> ObtenerAutores();
+
         Libro? ObtenerPorId(int id);
 
         int Crear(Libro libro);
